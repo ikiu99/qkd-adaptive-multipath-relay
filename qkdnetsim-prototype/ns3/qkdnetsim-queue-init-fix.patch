@@ -1,0 +1,18 @@
+diff --git a/model/qkd-kms-queue-logic.h b/model/qkd-kms-queue-logic.h
+index ebab299..172c9a2 100755
+--- a/model/qkd-kms-queue-logic.h
++++ b/model/qkd-kms-queue-logic.h
+@@ -82,9 +82,11 @@ private:
+ 
+   TracedValue<uint32_t> m_nPackets; //!< Number of packets in the queue
+ 
+-  uint32_t m_maxSize;
++  uint32_t m_maxSize {10};
+   
+-  uint32_t m_numberOfQueues;
++  // Default-initialised: the constructor builds the queues before ns-3
++  // applies attribute values, so it would otherwise read garbage.
++  uint32_t m_numberOfQueues {3};
+ 
+   std::vector<std::vector<QKDKMSQueueEntry> > m_queues;
+ 

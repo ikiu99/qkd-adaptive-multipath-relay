@@ -1,0 +1,34 @@
+{
+  "name": "abilene",
+  "description": "Abilene / Internet2 US research backbone (11 nodes, 14 links), February 2005 snapshot. Second verified real topology, added to replace the unverified COST239 placeholder.",
+  "source": "Internet Topology Zoo (https://github.com/mroughan/InternetTopologyZoo, gml/Abilene.gml), primary reference: Knight, Nguyen, Falkner, Bowden, Roughan, \"The Internet Topology Zoo\", IEEE JSAC 29(9), 2011; original data source cited in that file: Internet2, http://www.internet2.edu/pubs/200502-IS-AN.pdf. Node lat/lon are verbatim from that GML file; length_km below is the great-circle (haversine) distance between each edge's endpoints, computed from those coordinates (the GML file itself has no link-length attribute, only link type e.g. 'OC-192').",
+  "nodes": [
+    {"id": 0, "label": "New York", "lat": 40.71427, "lon": -74.00597},
+    {"id": 1, "label": "Chicago", "lat": 41.85003, "lon": -87.65005},
+    {"id": 2, "label": "Washington DC", "lat": 38.89511, "lon": -77.03637},
+    {"id": 3, "label": "Seattle", "lat": 47.60621, "lon": -122.33207},
+    {"id": 4, "label": "Sunnyvale", "lat": 37.36883, "lon": -122.03635},
+    {"id": 5, "label": "Los Angeles", "lat": 34.05223, "lon": -118.24368},
+    {"id": 6, "label": "Denver", "lat": 39.73915, "lon": -104.9847},
+    {"id": 7, "label": "Kansas City", "lat": 39.11417, "lon": -94.62746},
+    {"id": 8, "label": "Houston", "lat": 29.76328, "lon": -95.36327},
+    {"id": 9, "label": "Atlanta", "lat": 33.749, "lon": -84.38798},
+    {"id": 10, "label": "Indianapolis", "lat": 39.76838, "lon": -86.15804}
+  ],
+  "edges": [
+    {"u": 0, "v": 1, "length_km": 1145.8},
+    {"u": 0, "v": 2, "length_km": 328.5},
+    {"u": 1, "v": 10, "length_km": 263.3},
+    {"u": 2, "v": 9, "length_km": 871.9},
+    {"u": 3, "v": 4, "length_km": 1138.6},
+    {"u": 3, "v": 6, "length_km": 1641.1},
+    {"u": 4, "v": 5, "length_km": 503.2},
+    {"u": 4, "v": 6, "length_km": 1503.6},
+    {"u": 5, "v": 8, "length_km": 2206.8},
+    {"u": 6, "v": 7, "length_km": 891.8},
+    {"u": 7, "v": 8, "length_km": 1041.9},
+    {"u": 7, "v": 10, "length_km": 730.6},
+    {"u": 8, "v": 9, "length_km": 1127.6},
+    {"u": 9, "v": 10, "length_km": 687.6}
+  ]
+}

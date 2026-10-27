@@ -1,0 +1,19 @@
+# E2 -- Replication (README Section 9 / Section 12 Phase 2). Level: A.
+# See experiments/e2.py module docstring for the ASSUMPTION notes on both parts.
+exp_id: E2
+level: A
+
+part_a:
+  topology: nsfnet
+  method: B1
+  rho_A_values: [0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4]
+  n_seeds: 30
+  n_requests_per_seed: 300
+
+part_b:
+  topology: grid
+  method: B3
+  n_values: [2, 4, 6]
+  rho_A_values: [0.0, 0.1, 0.2, 0.3, 0.4]
+  n_seeds: 30
+  n_requests_per_seed: 300

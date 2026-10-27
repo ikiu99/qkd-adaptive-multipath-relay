@@ -1,0 +1,6 @@
+method,p_drop,p_tamper,success_under_attack_mean,silent_failure_rate_mean,n_seeds
+Adaptive,0.0,0.0,1.0,0.0,30
+Adaptive,0.05,0.05,0.8987179487179487,0.0023507997366484642,30
+Adaptive,0.1,0.1,0.8666666666666667,0.0009174311926605505,30
+Adaptive,0.2,0.2,0.625,0.0011695906432748538,30
+Adaptive,0.3,0.3,,0.0,30

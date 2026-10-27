@@ -1,0 +1,125 @@
+# Default configuration for the qkdmp simulation suite.
+# Values here are the fallback defaults referenced throughout README.md.
+# Every field an experiment config omits is taken from this file.
+
+seed: 42
+
+# --- Key / secret-sharing parameters (README 2.3) ---
+key_size_bits: 256          # |K|
+
+# --- Path selection (README 2.4) ---
+paths:
+  n_max: 4                  # N_max candidate disjoint paths per (s, d)
+  reserve_fraction: 0.1     # drop a path if any link pool < reserve_fraction * C_e
+  max_subsets: 200          # bound on enumerated (t, n) path subsets
+  # Batch ILP ceiling only (qkdmp.policies.batch_ilp): a larger candidate
+  # set, since online Adaptive re-routes on the depleted graph and can reach
+  # paths outside a fixed 4-path set.
+  ilp_n_max: 8
+  ilp_max_subsets: 800
+
+# --- Key-rate model (README 2.2) ---
+rate_model:
+  mode: length_dependent    # "length_dependent" or "uniform"
+  R0_bps: 100000.0            # R0
+  alpha_db_per_km: 0.2       # alpha
+  IL_db: 0.0                 # insertion loss
+  uniform_rate_bps: 100000.0  # used only when mode == uniform
+
+# --- Backbone length normalization (README 2.2) ---
+# ASSUMPTION: real backbone topologies (NSFNET, COST239) are rescaled into a
+# practical QKD span range before the rate model is applied. This represents
+# each backbone link as one QKD span; it is a simplification, not a claim
+# that the original link is a single physical QKD hop.
+length_normalization:
+  enabled: true
+  L_min_km: 10
+  L_max_km: 100
+
+# --- Key pools (README 2.1) ---
+# ASSUMPTION: no pool capacity is specified in the literature review, so we
+# define it relative to the link's own generation rate: C_e = capacity_seconds * R_e.
+# This makes capacity scale with link quality instead of being a fixed constant
+# across heterogeneous links. Revisit if the user has a preferred absolute value.
+pool:
+  capacity_seconds: 3600
+  initial_fill_fraction: 1.0   # pools start full in Level A / at t=0 in Level B
+
+# --- Suspicion scores (README 3.2) ---
+suspicion:
+  detector_quality: 0.7
+  p_min: 0.01
+  # ASSUMPTION: Beta parameter mapping until [REF-SUSPICION] is filled in.
+  # detector_quality in [0, 1] interpolates linearly between an uninformative
+  # detector (a_c = b_c = a_h = b_h = 2, i.e. Beta(2,2) for both populations)
+  # and a near-perfect one (a_c -> 8, b_c -> 1 for compromised nodes;
+  # a_h -> 1, b_h -> 8 for honest nodes).
+  beta_uninformative: [2.0, 2.0, 2.0, 2.0]   # [a_c, b_c, a_h, b_h]
+  beta_perfect: [8.0, 1.0, 1.0, 8.0]
+  # How a score becomes the compromise probability p_v the policies use.
+  # "calibrated" (default): Bayes posterior P(compromised | score) at base
+  # rate attacker.rho_A -- the user's detector outputs calibrated
+  # probabilities (qkdmp.suspicion.calibrated_posterior). "linear": the
+  # original p_min + (1 - p_min) * score map, not calibrated (it scores
+  # honest nodes ~0.18 at quality 0.7); used by every result before the
+  # calibration round, kept to reproduce them.
+  output: calibrated
+
+# --- Attacker (README 3.1) ---
+attacker:
+  placement: random
+  rho_A: 0.1
+  p_drop: 0.05
+  p_tamper: 0.05
+  # Only used when placement == "adaptive" (README 3.1 strategy 4): number
+  # of warm-up requests observed (with no suspicion info) before placing the
+  # attacker on the most-used relay nodes.
+  warmup_requests: 100
+
+# --- Controller targets (README 4.1) ---
+# ASSUMPTION (revised in Phase 6/report follow-up): README's own defaults
+# (eps_target=0.05, a_target=0.9, fallback=block) turned out to make the
+# Adaptive policy block 60-80% of requests on NSFNET even with no attacker
+# present at all (see reports/PHASE_3_REPORT.md, PHASE_6_REPORT.md) --
+# these are explicitly "tunable parameters swept in experiments" per
+# README 4.1, so this is a deliberate default change, not a silent one.
+# Every experiment config still documents/overrides its own values.
+policy:
+  eps_target: 0.15
+  a_target: 0.8
+  fallback: best_effort   # "block" or "best_effort"
+
+# --- Level B discrete-event simulation (README Section 6) ---
+# ASSUMPTION: none of these are given concrete values in README; picked to
+# be small relative to typical request inter-arrival times so they shape
+# results without dominating them.
+des:
+  control_latency_s: 0.001      # controller decision latency
+  hop_processing_s: 0.0001      # per-hop processing latency (propagation is L_e / 2e5 km/s)
+  warmup_requests: 50           # excluded from statistics (README 6)
+  arrival_rate_per_s: 5.0       # Poisson request arrival rate
+  traffic_mode: uniform         # "uniform" or "hotspot" (README 2.5)
+  hotspot_fraction: 0.5         # fraction of traffic routed to hotspot_pairs when traffic_mode == hotspot
+  hotspot_pairs: 2              # number of fixed (s, d) pairs receiving the hotspot fraction
+
+# --- Baselines (README Section 5) ---
+baselines:
+  b0:
+    variant: hopcount     # "hopcount" or "key_rate"
+  b1:
+    n: 2                  # fixed number of XOR n-of-n disjoint paths
+    n_max: 2
+  b2:
+    t: 2                  # fixed Shamir threshold
+    n: 3                  # fixed Shamir share count
+  b3:
+    # See configs/baselines/b3.yaml for the equation-by-equation notes
+    # (Ghourab et al. 2025). n, k_candidates: not specified by the paper.
+    # lambda_cor: Eq. (2). delta_w, d_max: Eq. (8). temporal_k: the decay
+    # exponent in delta_j(t) = W_j / t^k, not given a value in the paper.
+    n: 3
+    k_candidates: 8
+    lambda_cor: 1.0
+    delta_w: 1.0
+    d_max: 0.0
+    temporal_k: 1.0

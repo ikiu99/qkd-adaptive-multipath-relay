@@ -1,0 +1,13 @@
+engine,topology,dominates_on_means,goodput_better,goodput_worse,exposure_lower,exposure_higher,n_comparisons
+fluid,abilene,30,22,0,30,0,30
+fluid,geant,30,25,0,27,0,30
+fluid,germany50,30,30,0,30,0,30
+fluid,nsfnet,30,28,0,30,0,30
+ns3,abilene,30,21,0,30,0,30
+ns3,geant,30,26,0,27,0,30
+ns3,germany50,30,29,0,30,0,30
+ns3,nsfnet,30,27,0,30,0,30
+ns3relay,abilene,29,20,0,30,0,30
+ns3relay,geant,30,24,0,27,0,30
+ns3relay,germany50,30,29,0,30,0,30
+ns3relay,nsfnet,30,27,0,30,0,30

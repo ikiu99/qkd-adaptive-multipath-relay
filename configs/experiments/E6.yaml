@@ -1,0 +1,17 @@
+# E6 -- Drop/tamper sweep (README Section 9). Level: B.
+exp_id: E6
+level: B
+topology: nsfnet
+drop_tamper_values: [[0.0, 0.0], [0.05, 0.05], [0.1, 0.1], [0.2, 0.2], [0.3, 0.3]]
+methods: [B0, B1, B2, B3, Adaptive]
+rho: 0.3
+# Raised from the default 0.1 (user decision): at 0.1, "simultaneously
+# exposed" is too rare an event for success_under_attack to be sampled at
+# all for multipath (t > 1) methods, even at 30 seeds x 200 requests.
+rho_A: 0.3
+n_seeds: 30
+n_requests_per_seed: 200
+policy_overrides:
+  eps_target: 0.15
+  a_target: 0.8
+  fallback: block

@@ -1,0 +1,10 @@
+# E3 -- Security vs attacker (README Section 9). Level: A.
+# Also the source of Phase 3's decision gate (README Section 12, P3).
+exp_id: E3
+level: A
+topology: nsfnet
+rho_A_values: [0.0, 0.15, 0.3, 0.4]
+placements: [random, betweenness, key_throughput, adaptive]
+methods: [B0, B1, B2, B3, Adaptive]
+n_seeds: 30
+n_requests_per_seed: 100

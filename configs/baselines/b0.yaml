@@ -1,0 +1,4 @@
+# B0: single-path relay (README Section 5). No parameters beyond the default.
+baselines:
+  b0:
+    variant: hopcount

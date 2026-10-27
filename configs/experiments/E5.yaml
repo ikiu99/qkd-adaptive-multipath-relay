@@ -1,0 +1,22 @@
+# E5 -- Hotspot traffic at medium/high load (README Section 9). Level: B.
+exp_id: E5
+level: B
+topology: nsfnet
+rho_values: {medium: 0.3, high: 0.8}
+# +AC / +PA: pool-checked baseline variants (qkdmp.policies.admission),
+# the fair-comparison follow-up to Phase 7. Adaptive@0.5: the same policy at
+# eps_target=0.5 (a second operating point; experiments/level_b_common.py).
+methods: [B0, B1, B2, B3, B0+AC, B1+AC, B2+AC, B3+AC, B0+PA, B1+PA, B2+PA, B3+PA, Adaptive, Adaptive@0.5]
+hotspot_fraction: 0.6
+hotspot_pairs: 2
+n_seeds: 30
+n_requests_per_seed: 80
+policy_overrides:
+  eps_target: 0.15
+  a_target: 0.8
+  fallback: block
+# See configs/experiments/E4.yaml's comment: hotspot *link* contention only
+# shows up if the pool can actually run scarce within the batch.
+pool_overrides:
+  capacity_seconds: 0.5
+

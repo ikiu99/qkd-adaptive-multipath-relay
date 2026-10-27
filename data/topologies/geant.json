@@ -1,0 +1,321 @@
+{
+ "name": "geant",
+ "description": "GEANT pan-European research backbone (SNDlib 'geant', 2005 snapshot; includes the transatlantic New York and the Israel PoPs). 22 nodes, 36 links; min node-connectivity 2.",
+ "source": "SNDlib (Orlowski, Wessaely, Pioro, Tomaszewski, 'SNDlib 1.0 -- Survivable Network Design Library', Networks 55(3), 2010), https://sndlib.put.poznan.pl/download/sndlib-networks-native/geant.txt, downloaded to data/topologies/raw/sndlib_geant.txt. Node lon/lat verbatim from that file; length_km is the haversine distance between endpoints (the file has no link-length field); parallel links merged.",
+ "nodes": [
+  {
+   "id": 0,
+   "label": "at1.at",
+   "lat": 48.2091,
+   "lon": 16.3729
+  },
+  {
+   "id": 1,
+   "label": "be1.be",
+   "lat": 50.8469,
+   "lon": 4.3518
+  },
+  {
+   "id": 2,
+   "label": "ch1.ch",
+   "lat": 46.2038,
+   "lon": 6.1399
+  },
+  {
+   "id": 3,
+   "label": "cz1.cz",
+   "lat": 50.0785,
+   "lon": 14.4423
+  },
+  {
+   "id": 4,
+   "label": "de1.de",
+   "lat": 50.1122,
+   "lon": 8.6842
+  },
+  {
+   "id": 5,
+   "label": "es1.es",
+   "lat": 40.4167,
+   "lon": -3.7033
+  },
+  {
+   "id": 6,
+   "label": "fr1.fr",
+   "lat": 48.8566,
+   "lon": 2.351
+  },
+  {
+   "id": 7,
+   "label": "gr1.gr",
+   "lat": 37.9778,
+   "lon": 23.5808
+  },
+  {
+   "id": 8,
+   "label": "hr1.hr",
+   "lat": 45.8071,
+   "lon": 15.9644
+  },
+  {
+   "id": 9,
+   "label": "hu1.hu",
+   "lat": 47.4976,
+   "lon": 19.0936
+  },
+  {
+   "id": 10,
+   "label": "ie1.ie",
+   "lat": 53.3416,
+   "lon": -6.2573
+  },
+  {
+   "id": 11,
+   "label": "il1.il",
+   "lat": 32.0714,
+   "lon": 34.8097
+  },
+  {
+   "id": 12,
+   "label": "it1.it",
+   "lat": 45.4642,
+   "lon": 9.19
+  },
+  {
+   "id": 13,
+   "label": "lu1.lu",
+   "lat": 49.6112,
+   "lon": 6.1296
+  },
+  {
+   "id": 14,
+   "label": "nl1.nl",
+   "lat": 52.3236,
+   "lon": 4.9407
+  },
+  {
+   "id": 15,
+   "label": "ny1.ny",
+   "lat": 40.6698,
+   "lon": -73.94384
+  },
+  {
+   "id": 16,
+   "label": "pl1.pl",
+   "lat": 52.3963,
+   "lon": 16.8874
+  },
+  {
+   "id": 17,
+   "label": "pt1.pt",
+   "lat": 38.7073,
+   "lon": -9.1363
+  },
+  {
+   "id": 18,
+   "label": "se1.se",
+   "lat": 59.3617,
+   "lon": 17.8742
+  },
+  {
+   "id": 19,
+   "label": "si1.si",
+   "lat": 46.0574,
+   "lon": 14.5148
+  },
+  {
+   "id": 20,
+   "label": "sk1.sk",
+   "lat": 48.1531,
+   "lon": 17.1297
+  },
+  {
+   "id": 21,
+   "label": "uk1.uk",
+   "lat": 51.5086,
+   "lon": -0.1264
+  }
+ ],
+ "edges": [
+  {
+   "u": 0,
+   "v": 2,
+   "length_km": 803.8
+  },
+  {
+   "u": 0,
+   "v": 4,
+   "length_km": 597.4
+  },
+  {
+   "u": 0,
+   "v": 9,
+   "length_km": 217.9
+  },
+  {
+   "u": 0,
+   "v": 15,
+   "length_km": 6795.3
+  },
+  {
+   "u": 0,
+   "v": 19,
+   "length_km": 277.5
+  },
+  {
+   "u": 1,
+   "v": 6,
+   "length_km": 263.7
+  },
+  {
+   "u": 1,
+   "v": 13,
+   "length_km": 186.7
+  },
+  {
+   "u": 1,
+   "v": 14,
+   "length_km": 169.2
+  },
+  {
+   "u": 2,
+   "v": 6,
+   "length_km": 409.7
+  },
+  {
+   "u": 2,
+   "v": 12,
+   "length_km": 250.2
+  },
+  {
+   "u": 3,
+   "v": 4,
+   "length_km": 410.7
+  },
+  {
+   "u": 3,
+   "v": 16,
+   "length_km": 308.8
+  },
+  {
+   "u": 3,
+   "v": 20,
+   "length_km": 289.9
+  },
+  {
+   "u": 4,
+   "v": 6,
+   "length_km": 478.2
+  },
+  {
+   "u": 4,
+   "v": 7,
+   "length_km": 1792.8
+  },
+  {
+   "u": 4,
+   "v": 10,
+   "length_km": 1087.5
+  },
+  {
+   "u": 4,
+   "v": 12,
+   "length_km": 518.2
+  },
+  {
+   "u": 4,
+   "v": 14,
+   "length_km": 358.3
+  },
+  {
+   "u": 4,
+   "v": 18,
+   "length_km": 1183.2
+  },
+  {
+   "u": 5,
+   "v": 6,
+   "length_km": 1052.8
+  },
+  {
+   "u": 5,
+   "v": 12,
+   "length_km": 1188.2
+  },
+  {
+   "u": 5,
+   "v": 17,
+   "length_km": 502.9
+  },
+  {
+   "u": 6,
+   "v": 13,
+   "length_km": 286.9
+  },
+  {
+   "u": 6,
+   "v": 21,
+   "length_km": 343.6
+  },
+  {
+   "u": 7,
+   "v": 12,
+   "length_km": 1452.3
+  },
+  {
+   "u": 8,
+   "v": 9,
+   "length_km": 303.9
+  },
+  {
+   "u": 8,
+   "v": 19,
+   "length_km": 115.5
+  },
+  {
+   "u": 9,
+   "v": 20,
+   "length_km": 163.7
+  },
+  {
+   "u": 10,
+   "v": 21,
+   "length_km": 462.8
+  },
+  {
+   "u": 11,
+   "v": 12,
+   "length_km": 2655.7
+  },
+  {
+   "u": 11,
+   "v": 14,
+   "length_km": 3292.8
+  },
+  {
+   "u": 14,
+   "v": 21,
+   "length_km": 359.1
+  },
+  {
+   "u": 15,
+   "v": 21,
+   "length_km": 5569.2
+  },
+  {
+   "u": 16,
+   "v": 18,
+   "length_km": 776.9
+  },
+  {
+   "u": 17,
+   "v": 21,
+   "length_km": 1586.6
+  },
+  {
+   "u": 18,
+   "v": 21,
+   "length_km": 1424.8
+  }
+ ]
+}

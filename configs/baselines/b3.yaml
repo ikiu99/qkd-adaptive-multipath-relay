@@ -1,0 +1,46 @@
+# B3: Penalty-based multipath MTD, reimplementation of
+# Ghourab, Azab & Gracanin, "A quantum key distribution routing scheme for a
+# zero-trust QKD network system: A moving target defense approach",
+# BDCC 9(4):76, 2025. Full text supplied by the user (articles/BDCC-09-00076.pdf)
+# and read for this implementation; equation numbers below are that paper's.
+#
+# Implemented as published:
+#   - Eq. (4): path security P(S_i) = prod_j max(0, p_j - delta_j(t)), where
+#     p_j is the paper's *security* probability (1 - our p_v compromise
+#     probability) and delta_j(t) = W_j / t^k.
+#   - Eq. (1)-(2): path correlation Cor (shared links / total link count for
+#     a pair) and TH_Corr = lambda_Cor * mean(Cor) over the candidate pool.
+#   - Eq. (8): penalty W_j += Delta_W for nodes within Manhattan distance
+#     d_max of a detected compromise (paper: a 2D-mesh-specific mechanism,
+#     Section 5.3 -- only meaningful on topologies with (x, y) coordinates,
+#     e.g. `grid`).
+#   - Section 3 intro's "Eve would need to intercept all key segments" ->
+#     t = n (n-of-n, not a general (t, n) threshold; the paper doesn't
+#     describe a threshold variant).
+#
+# Still an # ASSUMPTION (paper doesn't specify a value or exact procedure):
+# n (# ASSUMPTION): number of paths selected; E2(b) sweeps n in {2, 4, 6}
+#   directly per the experiment table, overriding this default.
+# k_candidates (# ASSUMPTION): size of the Yen-KSP candidate pool.
+# temporal_k (# ASSUMPTION): the decay exponent k in delta_j(t) = W_j/t^k;
+#   no value given in the paper.
+# d_max (# ASSUMPTION): Manhattan-distance penalty radius (Eq. 8); default 0
+#   here (penalty applies to the exact detected node only) since nothing
+#   calls record_detection before Phase 3's reconstruct.py exists -- set > 0
+#   when running B3 on `grid` once detection is wired up.
+# lambda_cor, delta_w: no numeric values given in the paper; left at 1.0.
+# Candidate *generation* (# ASSUMPTION, not a numeric param): still
+#   length-weighted Yen KSP, not the paper's "ExDijkstra" (Section 4.2.2,
+#   Eq. 3's multiplicative security metric as a non-additive Dijkstra cost)
+#   -- the paper doesn't give enough detail (exact tie-breaking, cost
+#   combination with length) to reconstruct ExDijkstra exactly. The KSP pool
+#   is filtered by the paper's own security (Eq. 4) and correlation (Eq. 1-2)
+#   criteria afterward, so only the initial candidate *pool* uses our proxy.
+baselines:
+  b3:
+    n: 3
+    k_candidates: 8
+    lambda_cor: 1.0
+    delta_w: 1.0
+    d_max: 0.0
+    temporal_k: 1.0

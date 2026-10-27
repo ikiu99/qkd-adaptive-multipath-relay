@@ -1,0 +1,14 @@
+# E1 -- Correctness (README Section 9). Level: Tests.
+#
+# E1 has no standalone runner: per the experiment table, its "level" is the
+# pytest suite itself, not a simulation. Its three acceptance checks live in:
+#   - tests/test_shamir.py::test_any_t_shares_reconstruct
+#     (Shamir round-trip: any t shares reconstruct)
+#   - tests/test_security.py::test_exact_p_exp_matches_monte_carlo_within_3_se
+#     (P_exp exact vs Monte Carlo, within 3 SE)
+#   - tests/test_security.py::test_exposure_prob_disjoint_n_equals_t_equals_1_is_path_exposure
+#     (n = t = 1 reduces to the single-path exposure formula, i.e. B0's model)
+#
+# Run with: uv run pytest -q
+exp_id: E1
+level: tests

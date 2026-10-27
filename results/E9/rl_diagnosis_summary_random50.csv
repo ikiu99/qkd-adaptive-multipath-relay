@@ -1,0 +1,6 @@
+method,served_mean,served_ci_low,served_ci_high,gap_to_ilp_mean,gap_ci_low,gap_ci_high,reservation_failures_total,n_batches
+Adaptive,25.0,25.0,25.0,0.0,0.0,0.0,0,10
+Cheapest (non-learned),25.0,25.0,25.0,0.0,0.0,0.0,0,10
+BatchILP,25.0,25.0,25.0,0.0,0.0,0.0,0,10
+RL legacy (Phase 5),24.1,23.009879109098122,25.19012089090188,0.036,-0.007604835636075197,0.07960483563607519,9,10
+RL full (+shaping),25.0,25.0,25.0,0.0,0.0,0.0,0,10

@@ -1,0 +1,11 @@
+# Q4 -- Realistic KMS model (thesis extension, package 4). Level: B.
+# The E12 headline grid re-run under key lifetime and unreported local key
+# consumption (see qkdmp.sim.des._apply_kms_model); same held-out seeds and
+# operating point (eps_target 0.5) as E12, no re-tuning.
+exp_id: Q4
+topologies: [nsfnet, abilene]
+settings:
+  - {local_consumption_fraction: 0.1}
+  - {local_consumption_fraction: 0.3}
+  - {key_lifetime_s: 0.25}
+  - {local_consumption_fraction: 0.3, key_lifetime_s: 0.25}

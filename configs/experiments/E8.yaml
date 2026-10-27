@@ -1,0 +1,17 @@
+# E8 -- Ablation (README Section 9). Level: B.
+exp_id: E8
+level: B
+topology: nsfnet
+rho: 0.6
+n_seeds: 30
+n_requests_per_seed: 80
+policy_overrides:
+  eps_target: 0.15
+  a_target: 0.8
+  fallback: block
+# See configs/experiments/E4.yaml's comment: default pool capacity is too
+# large relative to a short batch to make the "no_pool_awareness" variant
+# meaningfully different from "full" otherwise.
+pool_overrides:
+  capacity_seconds: 0.5
+

@@ -1,0 +1,31 @@
+# E12 -- Secure goodput vs attacker strength, with a tuning/test protocol
+# (calibration round). Level: B.
+#
+# Adaptive has an operating-point knob (eps_target); the baselines have
+# none. To make a single-operating-point claim without selection bias,
+# eps_target is chosen on tuning seeds by a rule fixed in advance
+# (experiments/e12.py `choose_eps`: highest mean secure goodput over all
+# tuning cells) and every method is then evaluated on held-out seeds.
+# The full eps sweep is also evaluated on the test seeds for the
+# Pareto-dominance claim ("some operating point dominates each baseline").
+exp_id: E12
+level: B
+topologies: [nsfnet, abilene]
+rho: 0.6
+rho_A_values: [0.1, 0.2, 0.3]
+placements: [random, betweenness]
+baselines: [B0, B0+PA, B1+PA, B2+PA, B3+PA]
+eps_values: [0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5, 0.7, 0.9]
+n_requests_per_seed: 80
+tuning:
+  seed_offset: 0
+  n_seeds: 10
+test:
+  seed_offset: 1000
+  n_seeds: 30
+policy_overrides:
+  eps_target: 0.15
+  a_target: 0.8
+  fallback: block
+pool_overrides:
+  capacity_seconds: 0.5

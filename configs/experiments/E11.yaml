@@ -1,0 +1,46 @@
+# E11 -- Self-learned suspicion (fair-comparison follow-up). Level: B.
+# See experiments/e11.py for the question and the five p_v variants.
+exp_id: E11
+level: B
+topologies: [nsfnet, abilene]
+placements: [random, betweenness]
+# Compromised nodes' drop and tamper probability (p_drop = p_tamper):
+# 0.05 is the project default (mostly passive), 0.2 an active attacker.
+activity_values: [0.05, 0.2]
+rho: 0.3
+rho_A: 0.2
+n_seeds: 30
+n_requests_per_seed: 400
+n_windows: 4
+# Quality of the external detector for the external / external+learned
+# variants: useless, weak, and the project default.
+detector_qualities: [0.0, 0.3, 0.7]
+# ASSUMPTION: the controller's misbehavior model is a fixed guess that
+# matches neither activity level exactly (true 0.05 or 0.2), so E11 does
+# not quietly assume the controller knows the attacker's rates.
+learning:
+  q_drop: 0.1
+  q_tamper: 0.1
+  eps: 0.01
+  # Prior share of compromised nodes assumed passive (eavesdrop only): clean
+  # history can never clear a node below this floor (qkdmp.suspicion_learning).
+  passive_fraction: 0.5
+  # Probe up to this many candidate paths of each refused request with dummy
+  # shares (qkdmp.suspicion_learning). 0 disables probing.
+  probe_paths: 2
+# Flat prior for no_info / learned: one node-agnostic base rate for every
+# node (nothing known about *which* nodes are compromised).
+# ASSUMPTION: 0.3, a deliberately pessimistic guess above the true
+# rho_A=0.2. A maximum-entropy 0.5 makes every multi-hop option miss
+# eps_target, so the policy blocks all traffic and there is nothing to
+# learn from.
+no_info_prior: 0.3
+# block, as in E4/E5/E8: with best_effort the policy sends over a known-
+# compromised path whenever the clean ones lack key, so even the oracle
+# shows ~0.2 exposure and the variants become indistinguishable.
+policy_overrides:
+  eps_target: 0.15
+  a_target: 0.8
+  fallback: block
+pool_overrides:
+  capacity_seconds: 0.5

@@ -1,0 +1,28 @@
+# E9 -- Optimality & scalability (README Section 9). Level: A (see
+# experiments/e9.py module docstring for the Level-B scope-reduction note).
+#
+# eps_target/a_target/pool.capacity_seconds are overridden from
+# configs/default.yaml so that pool scarcity -- not blanket security
+# infeasibility -- is the binding constraint (README's own default
+# eps_target=0.05 makes almost every NSFNET request infeasible regardless
+# of pool state, which collapses every method to the same tiny feasible
+# set and hides any real optimality gap; see reports/PHASE_5_REPORT.md).
+exp_id: E9
+level: A
+# cost239 dropped (unverified topology data, per user decision).
+topologies: [nsfnet, random50]
+n_requests_per_batch: 25
+rl_timesteps: 30000
+# Back to SB3's default 0.0: raising it to 0.02 (Phase 7) did not help.
+# The plateau was an environment-design problem, not an exploration one --
+# E9 now uses the redesigned RL env (qkdmp.policies.rl.RLEnvDesign; see
+# reports/PHASE_7_REPORT.md and scripts/rl_diagnosis.py). Set
+# `rl_design: legacy` to reproduce the Phase 5 env.
+rl_ent_coef: 0.0
+seed: 0
+policy_overrides:
+  eps_target: 0.2
+  a_target: 0.7
+  fallback: block
+pool_overrides:
+  capacity_seconds: 0.3

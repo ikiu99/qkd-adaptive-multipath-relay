@@ -1,0 +1,10 @@
+# B2: Fixed (t, n) Shamir (README Section 5; IETF MPSS draft 2026,
+# draft-li-ipsecme-qkd-multipath-secret-sharing-01, full text supplied by
+# the user). (2, 3) is README's stated default, and matches the draft's own
+# worked example in Section 5.2/5.3 ("For (2,3) configuration, the attacker
+# needs to compromise at least 2 non-overlapping paths...") -- confirmed,
+# not just assumed.
+baselines:
+  b2:
+    t: 2
+    n: 3

@@ -1,0 +1,6 @@
+# B1: XOR n-of-n MNOP (README Section 5; Stepniak & Mielczarek 2023, Kiktenko et al. 2024).
+# n=2 is README's stated default.
+baselines:
+  b1:
+    n: 2
+    n_max: 2

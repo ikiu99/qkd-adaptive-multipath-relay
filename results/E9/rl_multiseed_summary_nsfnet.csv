@@ -1,0 +1,4 @@
+method,n_train_seeds,gap_mean,gap_min,gap_max
+Adaptive,1,0.008,0.008,0.008
+RL legacy (Phase 5),3,0.3748888888888889,0.3375,0.438
+RL full (+shaping),3,0.013333333333333334,0.008,0.024

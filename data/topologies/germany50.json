@@ -1,0 +1,749 @@
+{
+ "name": "germany50",
+ "description": "Germany50 realistic German national reference network (SNDlib 'germany50'). 50 nodes, 88 links; min node-connectivity 2.",
+ "source": "SNDlib (Orlowski, Wessaely, Pioro, Tomaszewski, 'SNDlib 1.0 -- Survivable Network Design Library', Networks 55(3), 2010), https://sndlib.put.poznan.pl/download/sndlib-networks-native/germany50.txt, downloaded to data/topologies/raw/sndlib_germany50.txt. Node lon/lat verbatim from that file; length_km is the haversine distance between endpoints (the file has no link-length field); parallel links merged.",
+ "nodes": [
+  {
+   "id": 0,
+   "label": "Aachen",
+   "lat": 50.76,
+   "lon": 6.04
+  },
+  {
+   "id": 1,
+   "label": "Augsburg",
+   "lat": 48.33,
+   "lon": 10.9
+  },
+  {
+   "id": 2,
+   "label": "Bayreuth",
+   "lat": 49.93,
+   "lon": 11.59
+  },
+  {
+   "id": 3,
+   "label": "Berlin",
+   "lat": 52.52,
+   "lon": 13.39
+  },
+  {
+   "id": 4,
+   "label": "Bielefeld",
+   "lat": 52.04,
+   "lon": 8.5
+  },
+  {
+   "id": 5,
+   "label": "Braunschweig",
+   "lat": 52.28,
+   "lon": 10.55
+  },
+  {
+   "id": 6,
+   "label": "Bremen",
+   "lat": 53.11,
+   "lon": 8.85
+  },
+  {
+   "id": 7,
+   "label": "Bremerhaven",
+   "lat": 53.54,
+   "lon": 8.58
+  },
+  {
+   "id": 8,
+   "label": "Chemnitz",
+   "lat": 50.84,
+   "lon": 12.93
+  },
+  {
+   "id": 9,
+   "label": "Darmstadt",
+   "lat": 49.89,
+   "lon": 8.65
+  },
+  {
+   "id": 10,
+   "label": "Dortmund",
+   "lat": 51.51,
+   "lon": 7.45
+  },
+  {
+   "id": 11,
+   "label": "Dresden",
+   "lat": 51.03,
+   "lon": 13.73
+  },
+  {
+   "id": 12,
+   "label": "Duesseldorf",
+   "lat": 51.25,
+   "lon": 6.77
+  },
+  {
+   "id": 13,
+   "label": "Erfurt",
+   "lat": 50.98,
+   "lon": 11.04
+  },
+  {
+   "id": 14,
+   "label": "Essen",
+   "lat": 51.46,
+   "lon": 7.02
+  },
+  {
+   "id": 15,
+   "label": "Flensburg",
+   "lat": 54.77,
+   "lon": 9.45
+  },
+  {
+   "id": 16,
+   "label": "Frankfurt",
+   "lat": 50.12,
+   "lon": 8.71
+  },
+  {
+   "id": 17,
+   "label": "Freiburg",
+   "lat": 47.98,
+   "lon": 7.8
+  },
+  {
+   "id": 18,
+   "label": "Fulda",
+   "lat": 50.56,
+   "lon": 9.69
+  },
+  {
+   "id": 19,
+   "label": "Giessen",
+   "lat": 50.57,
+   "lon": 8.67
+  },
+  {
+   "id": 20,
+   "label": "Greifswald",
+   "lat": 54.09,
+   "lon": 13.4
+  },
+  {
+   "id": 21,
+   "label": "Hamburg",
+   "lat": 53.57,
+   "lon": 9.99
+  },
+  {
+   "id": 22,
+   "label": "Hannover",
+   "lat": 52.38,
+   "lon": 9.72
+  },
+  {
+   "id": 23,
+   "label": "Kaiserslautern",
+   "lat": 49.43,
+   "lon": 7.75
+  },
+  {
+   "id": 24,
+   "label": "Karlsruhe",
+   "lat": 49.01,
+   "lon": 8.41
+  },
+  {
+   "id": 25,
+   "label": "Kassel",
+   "lat": 51.32,
+   "lon": 9.51
+  },
+  {
+   "id": 26,
+   "label": "Kempten",
+   "lat": 47.72,
+   "lon": 10.32
+  },
+  {
+   "id": 27,
+   "label": "Kiel",
+   "lat": 54.34,
+   "lon": 10.12
+  },
+  {
+   "id": 28,
+   "label": "Koblenz",
+   "lat": 50.4,
+   "lon": 7.52
+  },
+  {
+   "id": 29,
+   "label": "Koeln",
+   "lat": 50.94,
+   "lon": 6.87
+  },
+  {
+   "id": 30,
+   "label": "Konstanz",
+   "lat": 47.66,
+   "lon": 9.18
+  },
+  {
+   "id": 31,
+   "label": "Leipzig",
+   "lat": 51.34,
+   "lon": 12.38
+  },
+  {
+   "id": 32,
+   "label": "Magdeburg",
+   "lat": 52.14,
+   "lon": 11.64
+  },
+  {
+   "id": 33,
+   "label": "Mannheim",
+   "lat": 49.49,
+   "lon": 8.49
+  },
+  {
+   "id": 34,
+   "label": "Muenchen",
+   "lat": 48.15,
+   "lon": 11.57
+  },
+  {
+   "id": 35,
+   "label": "Muenster",
+   "lat": 51.97,
+   "lon": 7.6
+  },
+  {
+   "id": 36,
+   "label": "Norden",
+   "lat": 53.6,
+   "lon": 7.21
+  },
+  {
+   "id": 37,
+   "label": "Nuernberg",
+   "lat": 49.57,
+   "lon": 11.03
+  },
+  {
+   "id": 38,
+   "label": "Oldenburg",
+   "lat": 53.11,
+   "lon": 8.21
+  },
+  {
+   "id": 39,
+   "label": "Osnabrueck",
+   "lat": 52.28,
+   "lon": 8.03
+  },
+  {
+   "id": 40,
+   "label": "Passau",
+   "lat": 48.57,
+   "lon": 13.46
+  },
+  {
+   "id": 41,
+   "label": "Regensburg",
+   "lat": 49.0,
+   "lon": 12.09
+  },
+  {
+   "id": 42,
+   "label": "Saarbruecken",
+   "lat": 49.23,
+   "lon": 7.03
+  },
+  {
+   "id": 43,
+   "label": "Schwerin",
+   "lat": 53.55,
+   "lon": 11.45
+  },
+  {
+   "id": 44,
+   "label": "Siegen",
+   "lat": 50.91,
+   "lon": 8.03
+  },
+  {
+   "id": 45,
+   "label": "Stuttgart",
+   "lat": 48.74,
+   "lon": 9.1
+  },
+  {
+   "id": 46,
+   "label": "Trier",
+   "lat": 49.75,
+   "lon": 6.68
+  },
+  {
+   "id": 47,
+   "label": "Ulm",
+   "lat": 48.4,
+   "lon": 9.99
+  },
+  {
+   "id": 48,
+   "label": "Wesel",
+   "lat": 51.39,
+   "lon": 6.37
+  },
+  {
+   "id": 49,
+   "label": "Wuerzburg",
+   "lat": 49.78,
+   "lon": 9.97
+  }
+ ],
+ "edges": [
+  {
+   "u": 0,
+   "v": 29,
+   "length_km": 61.6
+  },
+  {
+   "u": 0,
+   "v": 46,
+   "length_km": 121.2
+  },
+  {
+   "u": 0,
+   "v": 48,
+   "length_km": 73.7
+  },
+  {
+   "u": 1,
+   "v": 34,
+   "length_km": 53.5
+  },
+  {
+   "u": 1,
+   "v": 47,
+   "length_km": 67.7
+  },
+  {
+   "u": 1,
+   "v": 49,
+   "length_km": 174.9
+  },
+  {
+   "u": 2,
+   "v": 8,
+   "length_km": 138.8
+  },
+  {
+   "u": 2,
+   "v": 31,
+   "length_km": 166.4
+  },
+  {
+   "u": 2,
+   "v": 37,
+   "length_km": 56.8
+  },
+  {
+   "u": 3,
+   "v": 11,
+   "length_km": 167.3
+  },
+  {
+   "u": 3,
+   "v": 20,
+   "length_km": 174.6
+  },
+  {
+   "u": 3,
+   "v": 31,
+   "length_km": 148.4
+  },
+  {
+   "u": 3,
+   "v": 32,
+   "length_km": 126.2
+  },
+  {
+   "u": 3,
+   "v": 43,
+   "length_km": 173.0
+  },
+  {
+   "u": 4,
+   "v": 5,
+   "length_km": 142.4
+  },
+  {
+   "u": 4,
+   "v": 22,
+   "length_km": 91.3
+  },
+  {
+   "u": 4,
+   "v": 35,
+   "length_km": 62.1
+  },
+  {
+   "u": 4,
+   "v": 44,
+   "length_km": 129.8
+  },
+  {
+   "u": 5,
+   "v": 21,
+   "length_km": 148.3
+  },
+  {
+   "u": 5,
+   "v": 22,
+   "length_km": 57.5
+  },
+  {
+   "u": 5,
+   "v": 25,
+   "length_km": 128.5
+  },
+  {
+   "u": 5,
+   "v": 32,
+   "length_km": 75.9
+  },
+  {
+   "u": 6,
+   "v": 7,
+   "length_km": 51.1
+  },
+  {
+   "u": 6,
+   "v": 22,
+   "length_km": 100.1
+  },
+  {
+   "u": 6,
+   "v": 38,
+   "length_km": 42.7
+  },
+  {
+   "u": 7,
+   "v": 15,
+   "length_km": 148.0
+  },
+  {
+   "u": 8,
+   "v": 11,
+   "length_km": 59.9
+  },
+  {
+   "u": 8,
+   "v": 13,
+   "length_km": 133.4
+  },
+  {
+   "u": 9,
+   "v": 16,
+   "length_km": 25.9
+  },
+  {
+   "u": 9,
+   "v": 23,
+   "length_km": 82.5
+  },
+  {
+   "u": 9,
+   "v": 33,
+   "length_km": 45.9
+  },
+  {
+   "u": 10,
+   "v": 14,
+   "length_km": 30.3
+  },
+  {
+   "u": 10,
+   "v": 25,
+   "length_km": 144.4
+  },
+  {
+   "u": 10,
+   "v": 35,
+   "length_km": 52.2
+  },
+  {
+   "u": 10,
+   "v": 44,
+   "length_km": 78.0
+  },
+  {
+   "u": 11,
+   "v": 13,
+   "length_km": 188.3
+  },
+  {
+   "u": 11,
+   "v": 31,
+   "length_km": 100.2
+  },
+  {
+   "u": 12,
+   "v": 14,
+   "length_km": 29.1
+  },
+  {
+   "u": 12,
+   "v": 29,
+   "length_km": 35.2
+  },
+  {
+   "u": 13,
+   "v": 25,
+   "length_km": 113.2
+  },
+  {
+   "u": 13,
+   "v": 31,
+   "length_km": 101.7
+  },
+  {
+   "u": 13,
+   "v": 49,
+   "length_km": 153.5
+  },
+  {
+   "u": 14,
+   "v": 48,
+   "length_km": 45.7
+  },
+  {
+   "u": 15,
+   "v": 27,
+   "length_km": 64.4
+  },
+  {
+   "u": 16,
+   "v": 18,
+   "length_km": 85.0
+  },
+  {
+   "u": 16,
+   "v": 19,
+   "length_km": 50.1
+  },
+  {
+   "u": 16,
+   "v": 28,
+   "length_km": 90.1
+  },
+  {
+   "u": 17,
+   "v": 24,
+   "length_km": 123.0
+  },
+  {
+   "u": 17,
+   "v": 30,
+   "length_km": 109.0
+  },
+  {
+   "u": 18,
+   "v": 19,
+   "length_km": 72.1
+  },
+  {
+   "u": 18,
+   "v": 25,
+   "length_km": 85.4
+  },
+  {
+   "u": 18,
+   "v": 49,
+   "length_km": 89.0
+  },
+  {
+   "u": 19,
+   "v": 25,
+   "length_km": 102.1
+  },
+  {
+   "u": 19,
+   "v": 44,
+   "length_km": 58.8
+  },
+  {
+   "u": 20,
+   "v": 43,
+   "length_km": 141.4
+  },
+  {
+   "u": 21,
+   "v": 22,
+   "length_km": 133.6
+  },
+  {
+   "u": 21,
+   "v": 27,
+   "length_km": 86.0
+  },
+  {
+   "u": 21,
+   "v": 43,
+   "length_km": 96.5
+  },
+  {
+   "u": 22,
+   "v": 39,
+   "length_km": 115.4
+  },
+  {
+   "u": 23,
+   "v": 24,
+   "length_km": 66.9
+  },
+  {
+   "u": 23,
+   "v": 28,
+   "length_km": 109.1
+  },
+  {
+   "u": 23,
+   "v": 42,
+   "length_km": 56.7
+  },
+  {
+   "u": 24,
+   "v": 33,
+   "length_km": 53.7
+  },
+  {
+   "u": 24,
+   "v": 42,
+   "length_km": 103.4
+  },
+  {
+   "u": 24,
+   "v": 45,
+   "length_km": 58.7
+  },
+  {
+   "u": 26,
+   "v": 30,
+   "length_km": 85.6
+  },
+  {
+   "u": 26,
+   "v": 34,
+   "length_km": 104.7
+  },
+  {
+   "u": 27,
+   "v": 43,
+   "length_km": 123.7
+  },
+  {
+   "u": 28,
+   "v": 29,
+   "length_km": 75.5
+  },
+  {
+   "u": 28,
+   "v": 44,
+   "length_km": 67.1
+  },
+  {
+   "u": 28,
+   "v": 46,
+   "length_km": 93.9
+  },
+  {
+   "u": 30,
+   "v": 45,
+   "length_km": 120.2
+  },
+  {
+   "u": 31,
+   "v": 32,
+   "length_km": 102.5
+  },
+  {
+   "u": 32,
+   "v": 43,
+   "length_km": 157.3
+  },
+  {
+   "u": 34,
+   "v": 37,
+   "length_km": 162.8
+  },
+  {
+   "u": 34,
+   "v": 40,
+   "length_km": 147.2
+  },
+  {
+   "u": 34,
+   "v": 41,
+   "length_km": 102.0
+  },
+  {
+   "u": 35,
+   "v": 39,
+   "length_km": 45.3
+  },
+  {
+   "u": 36,
+   "v": 38,
+   "length_km": 85.9
+  },
+  {
+   "u": 36,
+   "v": 48,
+   "length_km": 252.2
+  },
+  {
+   "u": 37,
+   "v": 41,
+   "length_km": 99.6
+  },
+  {
+   "u": 37,
+   "v": 49,
+   "length_km": 79.8
+  },
+  {
+   "u": 38,
+   "v": 39,
+   "length_km": 93.1
+  },
+  {
+   "u": 38,
+   "v": 48,
+   "length_km": 228.6
+  },
+  {
+   "u": 40,
+   "v": 41,
+   "length_km": 111.2
+  },
+  {
+   "u": 42,
+   "v": 46,
+   "length_km": 63.1
+  },
+  {
+   "u": 45,
+   "v": 47,
+   "length_km": 75.6
+  },
+  {
+   "u": 45,
+   "v": 49,
+   "length_km": 131.8
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+# E10 -- Detector quality (README Section 9). Level: A.
+# Extended (fair-comparison follow-up): both real topologies, every method,
+# and service ratio + amplification recorded alongside exposure.
+exp_id: E10
+level: A
+topologies: [nsfnet, abilene]
+detector_quality_values: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+methods: [B0, B1, B2, B3, Adaptive]
+rho_A: 0.2
+n_seeds: 30
+n_requests_per_seed: 150

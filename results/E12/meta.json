@@ -1,0 +1,102 @@
+{
+  "exp_id": "E12",
+  "git_commit": null,
+  "config": {
+    "exp_id": "E12",
+    "level": "B",
+    "topologies": [
+      "nsfnet",
+      "abilene"
+    ],
+    "rho": 0.6,
+    "rho_A_values": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "placements": [
+      "random",
+      "betweenness"
+    ],
+    "baselines": [
+      "B0",
+      "B0+PA",
+      "B1+PA",
+      "B2+PA",
+      "B3+PA"
+    ],
+    "eps_values": [
+      0.02,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "n_requests_per_seed": 80,
+    "tuning": {
+      "seed_offset": 0,
+      "n_seeds": 10
+    },
+    "test": {
+      "seed_offset": 1000,
+      "n_seeds": 30
+    },
+    "policy_overrides": {
+      "eps_target": 0.15,
+      "a_target": 0.8,
+      "fallback": "block"
+    },
+    "pool_overrides": {
+      "capacity_seconds": 0.5
+    }
+  },
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019,
+    1020,
+    1021,
+    1022,
+    1023,
+    1024,
+    1025,
+    1026,
+    1027,
+    1028,
+    1029
+  ],
+  "library_versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.6",
+    "networkx": "3.6.1",
+    "simpy": "4.1.2",
+    "highspy": "1.15.1",
+    "gymnasium": "1.3.0",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0",
+    "matplotlib": "3.11.2",
+    "pyyaml": "6.0.3"
+  }
+}

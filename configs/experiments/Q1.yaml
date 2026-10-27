@@ -1,0 +1,27 @@
+# Q1 -- QoS-aware admission (thesis extension, package 1). Level: B.
+# Three request classes with their own security target (eps), pool reserve
+# floor and deadline. Compared: our method without QoS, with classes, with
+# classes + reservation, and full (+ deadlines); and pool-pruned baselines
+# given the same reservation and deadline mechanisms (they have no security
+# knob, so per-class eps cannot apply to them).
+exp_id: Q1
+topologies: [nsfnet, abilene]
+placements: [random, betweenness]
+rho_A: 0.2
+rho_values: [0.3, 0.9, 1.3]
+n_requests_per_seed: 150
+seed_offset: 1000
+n_seeds: 30
+retry_interval_s: 0.01
+# ASSUMPTION: illustrative classes (banking-grade / enterprise / bulk); the
+# reserve floors and deadlines are relative to a 0.5 s pool (E12's).
+classes:
+  - {name: gold,   share: 0.2, eps: 0.02, a: 0.9, reserve_fraction: 0.0, deadline_s: 0.2}
+  - {name: silver, share: 0.3, eps: 0.10, a: 0.8, reserve_fraction: 0.1, deadline_s: 0.1}
+  - {name: bronze, share: 0.5, eps: 0.30, a: 0.7, reserve_fraction: 0.3, deadline_s: 0.0}
+policy_overrides:
+  eps_target: 0.5
+  a_target: 0.8
+  fallback: block
+pool_overrides:
+  capacity_seconds: 0.5
