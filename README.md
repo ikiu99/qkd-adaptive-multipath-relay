@@ -1,8 +1,8 @@
-# Key-budget-aware adaptive threshold secret sharing for multipath QKD key relay
+# Adaptive threshold secret sharing for multipath QKD key relay
 
-Simulation code and results for the paper *Key-budget-aware adaptive threshold
-secret sharing for multipath key relay in SDN-controlled quantum key
-distribution networks*.
+Simulation code and results for the paper *Adaptive threshold secret sharing
+for multipath key relay in QKD networks with compromised relays and finite key
+pools*.
 
 For every key request, an SDN controller chooses the relay paths and the Shamir
 parameters (t, n) together, using calibrated per-node compromise probabilities
